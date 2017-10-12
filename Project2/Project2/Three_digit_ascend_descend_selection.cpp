@@ -15,23 +15,30 @@ void pause() {
 	cout << "\n";
 } 
 void main() {
+	for(int i=0; i<30; i++)
+	{
 	int x, a, b, c;
-	cout << "Enter a 3 digit number . . ." << endl;
+	if (i==0)
+	{
+		cout<<"Enter a 3 digit number . . .";
+	}
+	cout <<endl<< "Enter a 3 digit number . . .";
 	cin >> x; // This is where the user inputs the 3 digit number
 
 	a = x / 100; // This first digit
 	
-	b = (x - (a * 100)) / 10; // This is the second digit
+	b = (x / 10)%10; // This is the second digit modified slightly
 	
-	c = ((x - (a * 100)) - (b * 10)); // This is the third digit
+	c = x % 10; // This is the third digit Modified slightly
 	
 
 	if (a < b && b < c){ // This checks if the first digit is smaller then the second and if the second is smaller than the third
-		cout << "Ascending";}
+		cout <<x<< " is ascending";}
 	else if (a > b && b > c) { // this checks if the first digit is larger then the second and if the second is larger than the third
-		cout << "Descending";}
+		cout <<x<< " is descending";}
 	else {
-		cout << "Neither"; // This is only used if the number does not apply to the "if" or the "else if"
+		cout <<x<< "is neither"; // This is only used if the number does not apply to the "if" or the "else if"
+	}
 	}
 	pause();
 }
